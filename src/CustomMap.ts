@@ -1,3 +1,13 @@
+//Explains how an object should be used as an arg for the functions in CustomMap.
+export interface Mappable {
+    location: {
+        lat: number;
+        lng: number;
+    };
+    markerContent(): string;
+    color: string;
+}
+
 export class CustomMap {
     googleMap: google.maps.Map
 
