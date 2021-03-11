@@ -4,8 +4,8 @@ export interface Mappable {
         lat: number;
         lng: number;
     };
-    markerContent(): string;
-    color: string;
+    // markerContent(): string;
+    // color: string;
 }
 
 export class CustomMap {
@@ -17,6 +17,17 @@ export class CustomMap {
             center: {
                 lat: 0,
                 lng: 0
+            }
+        });
+    }
+
+    //argument of type mappable are used to determine the location that gets displayed 
+    addMarker(mappable: Mappable): void {
+        const marker = new google.maps.Marker({
+            map: this.googleMap,
+            position: {
+                lat: mappable.location.lat,
+                lng: mappable.location.lng
             }
         });
     }
