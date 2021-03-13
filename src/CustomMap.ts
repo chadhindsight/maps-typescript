@@ -21,7 +21,7 @@ export class CustomMap {
         });
     }
 
-    //argument of type Mappable are used to determine the location that gets displayed 
+    //argument of type Mappable are used to determine the location that gets displayed.
     addMarker(mappable: Mappable): void {
         const marker = new google.maps.Marker({
             map: this.googleMap,
