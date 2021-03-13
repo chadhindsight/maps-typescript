@@ -1,15 +1,15 @@
-//Explains how an object should be used as an arg for the functions in CustomMap.
+//Explains how an object should be used as an arg for the functions in CustomMap
 export interface Mappable {
     location: {
         lat: number;
         lng: number;
     };
     markerContent(): string;
-    // color: string;
+    color: string;
 }
 
 export class CustomMap {
-    googleMap: google.maps.Map
+    private googleMap: google.maps.Map
 
     constructor(divId: string) {
         this.googleMap = new google.maps.Map(document.getElementById(divId), {
@@ -21,7 +21,7 @@ export class CustomMap {
         });
     }
 
-    //argument of type mappable are used to determine the location that gets displayed 
+    //argument of type Mappable are used to determine the location that gets displayed 
     addMarker(mappable: Mappable): void {
         const marker = new google.maps.Marker({
             map: this.googleMap,
